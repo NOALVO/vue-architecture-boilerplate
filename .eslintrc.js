@@ -12,17 +12,18 @@ module.exports = {
   ],
   rules: {
     'prefer-destructuring': 'off',
-    camelcase: 'error',
+    // #region regras-comite
+    'camelcase': 'error',
     'no-new': 'error',
     'no-unused-vars': 'error',
-    'max-len': ['error', { code: 100 }],
-    'import/no-dynamic-require': 'allow',
+    'max-len': ['error', { 'code': 100 }],
+    'import/no-dynamic-require': 0,
     'no-console': 'error',
     'padded-blocks': ['error', 'never'],
     'no-unused-expressions': 'error',
     // allow optionalDependencies
     'import/no-extraneous-dependencies': ['error', {
-      optionalDependencies: ['test/unit/index.js'],
+      optionalDependencies: ['test/unit/index.js']
     }],
     // disallow reassignment of function parameters
     // disallow parameter object manipulation except for specific exclusions
@@ -34,11 +35,14 @@ module.exports = {
         'e', // for e.returnvalue
         'Vue', // for Vue.prototype
         'config',
-      ],
+      ]
     }],
     'no-plusplus': 'off',
     'comma-dangle': ['error', 'always-multiline'],
-    semi: ['error', 'always'],
+    'semi': ['error', 'always'],
+    // #endregion regras-comite
+
+    'no-eval': 1,
     'no-confusing-arrow': 'off',
     'arrow-parens': 'off',
     'consistent-return': 'off',
